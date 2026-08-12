@@ -1,0 +1,185 @@
+@import "tailwindcss";
+
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  height: 100%;
+}
+
+body {
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0a1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3354;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2b4772;
+}
+
+/* Firefox scrollbar support */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #1e3354 #0a1628;
+}
+
+/* Animations */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.animate-blink {
+  animation: blink 2s infinite;
+}
+
+/* MARQUEE ANIMATION */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* DARK BACKGROUND */
+.dark {
+  background: linear-gradient(90deg, #aecaec, #5b84b1);
+  min-height: 100vh;
+}
+
+/* A SHAPE */
+.a-shape {
+  position: fixed;
+  right: -80px;
+  top: 55%;
+  transform: translateY(-50%);
+
+  width: 500px;
+  height: 650px;
+
+  opacity: 0.2;
+  z-index: 0;
+
+  /* 🔥 NEW TECH BACKGROUND */
+  background: radial-gradient(circle at 60% 40%, #3b82f6, transparent 60%),
+    radial-gradient(circle at 40% 70%, #a855f7, transparent 60%),
+    linear-gradient(135deg, #020617, #0b1f3a);
+
+  clip-path: polygon(50% 0%,
+      100% 100%,
+      75% 100%,
+      60% 70%,
+      40% 70%,
+      25% 100%,
+      0% 100%);
+
+  filter: blur(0.3px);
+}
+
+.a-shape::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+
+  background-size: 30px 30px;
+
+  opacity: 0.4;
+}
+
+/* overlay */
+.a-shape::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: radial-gradient(circle at 50% 50%, rgba(59, 130, 246, 0.3), transparent 70%);
+  mix-blend-mode: screen;
+}

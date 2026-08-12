@@ -1,0 +1,6 @@
+{
+  "name": "Apexon Workplace Operations Hub",
+  "description": "Central workplace operations portal integrating Apexon RoomBook, VisiFlow Visitor Access, ParkSwift Smart Parking, and VoucherLogix Corporate Vouchers",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[codz]
+*.so
+*.egg-info/
+*.egg
+dist/
+build/
+.eggs/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Database (local dev only — Render uses its own)
+*.db
+
+# Node
+node_modules/
+react-app/dist/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Kiro
+.kiro/
+
+# Streamlit (legacy, not deployed)
+streamlit_app/__pycache__/
+streamlit_app/.streamlit/
+
+# Coverage
+.coverage
+htmlcov/
+.pytest_cache/
