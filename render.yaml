@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: apexon-workspace-hub
+    name: apexon-workspace-hub-v02
     env: node
     plan: free
     buildCommand: npm install --legacy-peer-deps && npm run build

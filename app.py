@@ -22,6 +22,7 @@ import pytesseract
 import pdfplumber
 import pypdf
 
+
 app = FastAPI(title="Apexon Workspace Hub API", version="1.0.0")
 
 app.add_middleware(
@@ -1573,18 +1574,44 @@ async def chat_bot(request: Request):
 
 # ── STATIC FILE SERVING FOR PRODUCTION ──────────────────────────────────────
 
-dist_dir = Path(os.getcwd()) / 'dist'
-if dist_dir.exists():
-    app.mount("/assets", StaticFiles(directory=str(dist_dir / "assets")), name="assets")
+BASE_DIR = Path(__file__).resolve().parent
+dist_dir = BASE_DIR / "dist"
 
-@app.get('/{full_path:path}')
+if dist_dir.exists():
+    assets_dir = dist_dir / "assets"
+
+    if assets_dir.exists():
+        app.mount(
+            "/assets",
+            StaticFiles(directory=str(assets_dir)),
+            name="assets"
+        )
+
+@app.get("/")
+async def serve_frontend():
+    if os.environ.get("NODE_ENV") == "production" and dist_dir.exists():
+        return FileResponse(dist_dir / "index.html")
+
+    return JSONResponse(
+        {"error": "In development mode, please access Vite server on port 3000"},
+        status_code=404
+    )
+
+@app.get("/{full_path:path}")
 async def catch_all(full_path: str):
-    if os.environ.get('NODE_ENV') == 'production' and dist_dir.exists():
+    if os.environ.get("NODE_ENV") == "production" and dist_dir.exists():
         file_path = dist_dir / full_path
+
         if full_path and file_path.exists() and file_path.is_file():
             return FileResponse(file_path)
-        return FileResponse(dist_dir / 'index.html')
-    return JSONResponse({'error': 'In development mode, please access Vite server on port 3000'}, status_code=404)
+
+        # React Router SPA fallback
+        return FileResponse(dist_dir / "index.html")
+
+    return JSONResponse(
+        {"error": "In development mode, please access Vite server on port 3000"},
+        status_code=404
+    )
 
 # ── SERVER LAUNCHER ─────────────────────────────────────────────────────────
 
@@ -1623,9 +1650,15 @@ def run_server():
 
         subprocess.run(vite_cmd, check=True)
     else:
-        # In production: Run uvicorn directly on port 3000
-        print("Launching FastAPI Python production server on http://0.0.0.0:3000 ...")
-        uvicorn.run(app, host='0.0.0.0', port=3000)
+        port = int(os.environ.get("PORT", 3000))
+
+        print(f"Launching FastAPI Python production server on http://0.0.0.0:{port} ...")
+
+        uvicorn.run(
+            app,
+            host="0.0.0.0",
+            port=port
+        )
 
 if __name__ == '__main__':
     run_server()
