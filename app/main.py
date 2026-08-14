@@ -53,6 +53,7 @@ def user_safe_dict(user: UserModel):
 # Health Check
 @app.get("/api/health")
 def health():
+    print("Hello I'm from main")
     return {"status": "ok", "backend": "FastAPI + SQLite (SQLAlchemy)"}
 
 # Central Hub Stats

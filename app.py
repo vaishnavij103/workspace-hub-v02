@@ -441,6 +441,7 @@ def get_current_user(request: Request):
 
 @app.get('/api/health')
 def get_health():
+    print("Hello")
     return {
         'status': 'ok',
         'time': datetime.datetime.now(datetime.timezone.utc).isoformat(),
