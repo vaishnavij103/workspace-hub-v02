@@ -441,10 +441,11 @@ def get_current_user(request: Request):
 
 @app.get('/api/health')
 def get_health():
-    print("Hello")
+    current_time = datetime.datetime.now(datetime.timezone.utc).isoformat()
+    print("Health check at", current_time)
     return {
         'status': 'ok',
-        'time': datetime.datetime.now(datetime.timezone.utc).isoformat(),
+        'time': current_time,
         'backend': 'Python FastAPI',
         'counts': {
             'rooms': len(rooms),
