@@ -505,7 +505,13 @@ export default function InvoicesPage() {
                       type="text"
                       value={extractedData.document_type || ''}
                       onChange={(e) => setExtractedData({ ...extractedData, document_type: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
 
@@ -515,7 +521,13 @@ export default function InvoicesPage() {
                       type="text"
                       value={extractedData.vendor_name || ''}
                       onChange={(e) => setExtractedData({ ...extractedData, vendor_name: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo font-bold"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
 
@@ -525,7 +537,13 @@ export default function InvoicesPage() {
                       type="text"
                       value={extractedData.invoice_number || ''}
                       onChange={(e) => setExtractedData({ ...extractedData, invoice_number: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo font-mono"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
 
@@ -535,7 +553,13 @@ export default function InvoicesPage() {
                       type="date"
                       value={extractedData.invoice_date || ''}
                       onChange={(e) => setExtractedData({ ...extractedData, invoice_date: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
 
@@ -545,7 +569,13 @@ export default function InvoicesPage() {
                       type="text"
                       value={extractedData.currency || 'USD'}
                       onChange={(e) => setExtractedData({ ...extractedData, currency: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
 
@@ -555,7 +585,13 @@ export default function InvoicesPage() {
                       type="text"
                       value={extractedData.vendor_address || ''}
                       onChange={(e) => setExtractedData({ ...extractedData, vendor_address: e.target.value })}
-                      className="w-full p-2.5 rounded-xl bg-slate-900 border border-slate-700 text-indigo"
+                      className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                     />
                   </div>
                 </div>
@@ -596,7 +632,13 @@ export default function InvoicesPage() {
                                 type="text"
                                 value={item.description}
                                 onChange={(e) => handleUpdateItem(idx, 'description', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -604,7 +646,13 @@ export default function InvoicesPage() {
                                 type="text"
                                 value={item.type_of_service}
                                 onChange={(e) => handleUpdateItem(idx, 'type_of_service', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -612,7 +660,13 @@ export default function InvoicesPage() {
                                 type="date"
                                 value={item.start_date}
                                 onChange={(e) => handleUpdateItem(idx, 'start_date', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -620,7 +674,13 @@ export default function InvoicesPage() {
                                 type="date"
                                 value={item.end_date}
                                 onChange={(e) => handleUpdateItem(idx, 'end_date', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -628,7 +688,13 @@ export default function InvoicesPage() {
                                 type="number"
                                 value={item.quantity}
                                 onChange={(e) => handleUpdateItem(idx, 'quantity', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -636,7 +702,13 @@ export default function InvoicesPage() {
                                 type="number"
                                 value={item.unit_price}
                                 onChange={(e) => handleUpdateItem(idx, 'unit_price', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                             <td className="p-2">
@@ -644,7 +716,13 @@ export default function InvoicesPage() {
                                 type="number"
                                 value={item.amount}
                                 onChange={(e) => handleUpdateItem(idx, 'amount', e.target.value)}
-                                className="w-full p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo text-xs font-bold"
+                                className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                               />
                             </td>
                           </tr>
@@ -663,7 +741,13 @@ export default function InvoicesPage() {
                         type="number"
                         value={extractedData.subtotal}
                         onChange={(e) => setExtractedData({ ...extractedData, subtotal: Number(e.target.value) })}
-                        className="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo font-bold w-28"
+                        className="w-full p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                       />
                     </div>
                     <div>
@@ -679,7 +763,13 @@ export default function InvoicesPage() {
                             total_amount: (extractedData.subtotal || 0) + taxVal,
                           });
                         }}
-                        className="p-1.5 rounded-lg bg-slate-900 border border-slate-700 text-indigo font-bold w-28"
+                        className="p-2.5 rounded-xl
+    bg-slate-100 dark:bg-slate-800
+    border border-slate-300 dark:border-slate-600
+    text-slate-900 dark:text-slate-100
+    placeholder:text-slate-400 dark:placeholder:text-slate-500
+    focus:outline-none focus:ring-2 focus:ring-indigo-500/40
+    focus:border-indigo-500"
                       />
                     </div>
                   </div>

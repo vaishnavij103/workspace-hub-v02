@@ -4,7 +4,7 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    return localStorage.getItem('apexon_theme') || 'dark';
+    return localStorage.getItem('apexon_theme') || 'light';
   });
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export function ThemeProvider({ children }) {
 export function useTheme() {
   const context = useContext(ThemeContext);
   if (!context) {
-    return { theme: 'dark', toggleTheme: () => {} };
+    return { theme: 'light', toggleTheme: () => { } };
   }
   return context;
 }

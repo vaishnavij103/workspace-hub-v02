@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "python app.py",
+    "dev": "python main.py",
     "build": "vite build",
     "start": "uvicorn main:app --host 0.0.0.0 --port $PORT",
     "lint": "eslint ."
